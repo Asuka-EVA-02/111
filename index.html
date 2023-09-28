@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>骑士对战平台</title>
     <style>
         /* 设置背景图片 */
         body {
@@ -11,17 +10,3983 @@
             background-size: cover; /* 使背景图片铺满整个页面 */
             background-repeat: no-repeat; /* 防止图片重复显示 */
             background-attachment: fixed; /* 固定背景图片，不随页面滚动 */
+            margin: 0; /* 去除页面默认边距 */
+            text-align: center; /* 文本居中 */
         }
         
-        /* 可选的样式，用于修改文本颜色 */
+        /* 骑士对战平台标题样式 */
         h1 {
-            color: white;
-            text-align: center;
+            color: rgba(255, 255, 255, 0);
             padding: 100px;
+            margin: 0; /* 去除标题默认边距 */
+            color: #f7dca3; /* 设置标题文本颜色为复古风格的黄色 */
+            padding: 100px;
+            margin: 0; /* 去除标题默认边距 */
+            text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.5); /* 添加文本阴影效果 */
+            font-family: "Times New Roman", serif; /* 设置复古风格的字体 */
+            font-size: 36px; /* 设置字体大小 */
+        }
+
+        /* 缩小并居中表格 */
+        .table-container {
+            text-align: center;
+        }
+
+        table {
+            width: 50%; /* 调整表格宽度 */
+            margin: 0 auto; /* 水平居中 */
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* 表格背景颜色，使内容更易读 */
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e0e0e0;
+        }
+
+        .map-thumb img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .server-name {
+            font-weight: bold;
+        }
+
+        .country-flag img {
+            max-width: 20px;
+            height: auto;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+
+        .mode, .map, .preset, .tick-rate {
+            margin-right: 10px;
+        }
+
+        .occupied {
+            color: rgb(18, 155, 214);
+        }
+
+        .max {
+            color: rgb(18, 155, 214);
+        }
+
+        .icon-servertype {
+            font-size: 24px;
+            color: #007bff;
         }
     </style>
 </head>
 <body>
     <h1>骑士对战平台</h1>
+    <div class="table-container">
+        <table>
+            <tr class="server-row trigger-el" data-guid="0c585f5a-06f6-4baf-b222-f81bdb479f95" data-game="2048" data-platform="1" data-role="1">
+                <td class="map less-padding no-separator">
+                    <div class="map-thumb">
+                        <img src="https://github.com/Asuka-EVA-02/Knight-Platform/blob/main/%5BJ4BPBLUIRJ3DV%7BNF%7D~9FVY.png?raw=true" alt="荒野遊蹤">
+                    </div>
+                    <div class="loader small"></div>
+                </td>
+                <td class="server less-padding floating-width" style="">
+                    <div class="server-name">
+                        老龙 Old Long
+                    </div>
+                    <div class="server-details">
+                        <div class="expansions pull-right"></div>
+                        <span class="country-flag">
+                        </span>
+                        <span class="mode" data-tooltip="模式" data-tooltip-show-delay="1000">
+                            无缝2.0
+                        </span> •
+                        <span class="map" data-tooltip="地圖" data-tooltip-show-delay="1000">
+                            龙王普拉顿桑克斯
+                        </span> •
+                        <span class="preset" data-tooltip="組態" data-tooltip-show-delay="1000">
+                            无规则
+                        </span> •
+                        <span class="tick-rate" data-tooltip="運算頻率" data-tooltip-show-delay="1000">
+                            ?
+                        </span>
+                    </div>
+                </td>
+                <td class="players">
+                    <span class="occupied">0</span> /
+                    <span class="max">∞</span>
+                </td>
+                <td class="less-padding server-icons">
+                    <i class="icon-servertype icon-servertype-2"></i>
+                </td>
+                <td class="ping no-separator">
+                    -
+                </td>
+            </tr>
+        </table>
+    </div>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Add CSS styles for the table */
+        table {
+            width: 60%;
+            border-collapse: collapse;
+            margin: 0 auto;
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e0e0e0;
+        }
+
+        .map-thumb img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .server-name {
+            font-weight: bold;
+        }
+
+        .country-flag img {
+            max-width: 20px;
+            height: auto;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+
+        .mode, .map, .preset, .tick-rate {
+            margin-right: 10px;
+        }
+
+        .occupied {
+            color: rgb(18, 155, 214);
+        }
+
+        .max {
+            color: rgb(18, 155, 214);
+        }
+
+        .icon-servertype {
+            font-size: 24px;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr class="server-row trigger-el" data-guid="0c585f5a-06f6-4baf-b222-f81bdb479f95" data-game="2048" data-platform="1" data-role="1">
+            <td class="map less-padding no-separator">
+                <div class="map-thumb">
+                    <img src="https://github.com/Asuka-EVA-02/Knight-Platform/blob/main/%5BJ4BPBLUIRJ3DV%7BNF%7D~9FVY.png?raw=true" alt="荒野遊蹤">
+                </div>
+                <div class="loader small"></div>
+            </td>
+            <td class="server less-padding floating-width" style="">
+                <div class="server-name">
+                    老龙 Old Long
+                </div>
+                <div class="server-details">
+                    <div class="expansions pull-right"></div>
+                    <span class="country-flag">
+                    </span>
+                    <span class="mode" data-tooltip="模式" data-tooltip-show-delay="1000">
+                        无缝2.0
+                    </span> •
+                    <span class="map" data-tooltip="地圖" data-tooltip-show-delay="1000">
+                        龙王普拉顿桑克斯
+                    </span> •
+                    <span class="preset" data-tooltip="組態" data-tooltip-show-delay="1000">
+                        无规则
+                    </span> •
+                    <span class="tick-rate" data-tooltip="運算頻率" data-tooltip-show-delay="1000">
+                        ?
+                    </span>
+                </div>
+            </td>
+            <td class="players">
+                <span class="occupied">0</span> /
+                <span class="max">∞</span>
+            </td>
+            <td class="less-padding server-icons">
+                <i class="icon-servertype icon-servertype-2"></i>
+            </td>
+            <td class="ping no-separator">
+                -
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Add CSS styles for the table */
+        table {
+            width: 60%;
+            border-collapse: collapse;
+            margin: 0 auto;
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e0e0e0;
+        }
+
+        .map-thumb img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .server-name {
+            font-weight: bold;
+        }
+
+        .country-flag img {
+            max-width: 20px;
+            height: auto;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+
+        .mode, .map, .preset, .tick-rate {
+            margin-right: 10px;
+        }
+
+        .occupied {
+            color: rgb(18, 155, 214);
+        }
+
+        .max {
+            color: rgb(18, 155, 214);
+        }
+
+        .icon-servertype {
+            font-size: 24px;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr class="server-row trigger-el" data-guid="0c585f5a-06f6-4baf-b222-f81bdb479f95" data-game="2048" data-platform="1" data-role="1">
+            <td class="map less-padding no-separator">
+                <div class="map-thumb">
+                    <img src="https://github.com/Asuka-EVA-02/Knight-Platform/blob/main/%5BJ4BPBLUIRJ3DV%7BNF%7D~9FVY.png?raw=true" alt="荒野遊蹤">
+                </div>
+                <div class="loader small"></div>
+            </td>
+            <td class="server less-padding floating-width" style="">
+                <div class="server-name">
+                    老龙 Old Long
+                </div>
+                <div class="server-details">
+                    <div class="expansions pull-right"></div>
+                    <span class="country-flag">
+                    </span>
+                    <span class="mode" data-tooltip="模式" data-tooltip-show-delay="1000">
+                        无缝2.0
+                    </span> •
+                    <span class="map" data-tooltip="地圖" data-tooltip-show-delay="1000">
+                        龙王普拉顿桑克斯
+                    </span> •
+                    <span class="preset" data-tooltip="組態" data-tooltip-show-delay="1000">
+                        无规则
+                    </span> •
+                    <span class="tick-rate" data-tooltip="運算頻率" data-tooltip-show-delay="1000">
+                        ?
+                    </span>
+                </div>
+            </td>
+            <td class="players">
+                <span class="occupied">0</span> /
+                <span class="max">∞</span>
+            </td>
+            <td class="less-padding server-icons">
+                <i class="icon-servertype icon-servertype-2"></i>
+            </td>
+            <td class="ping no-separator">
+                -
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Add CSS styles for the table */
+        table {
+            width: 60%;
+            border-collapse: collapse;
+            margin: 0 auto;
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e0e0e0;
+        }
+
+        .map-thumb img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .server-name {
+            font-weight: bold;
+        }
+
+        .country-flag img {
+            max-width: 20px;
+            height: auto;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+
+        .mode, .map, .preset, .tick-rate {
+            margin-right: 10px;
+        }
+
+        .occupied {
+            color: rgb(18, 155, 214);
+        }
+
+        .max {
+            color: rgb(18, 155, 214);
+        }
+
+        .icon-servertype {
+            font-size: 24px;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr class="server-row trigger-el" data-guid="0c585f5a-06f6-4baf-b222-f81bdb479f95" data-game="2048" data-platform="1" data-role="1">
+            <td class="map less-padding no-separator">
+                <div class="map-thumb">
+                    <img src="https://github.com/Asuka-EVA-02/Knight-Platform/blob/main/%5BJ4BPBLUIRJ3DV%7BNF%7D~9FVY.png?raw=true" alt="荒野遊蹤">
+                </div>
+                <div class="loader small"></div>
+            </td>
+            <td class="server less-padding floating-width" style="">
+                <div class="server-name">
+                    老龙 Old Long
+                </div>
+                <div class="server-details">
+                    <div class="expansions pull-right"></div>
+                    <span class="country-flag">
+                    </span>
+                    <span class="mode" data-tooltip="模式" data-tooltip-show-delay="1000">
+                        无缝2.0
+                    </span> •
+                    <span class="map" data-tooltip="地圖" data-tooltip-show-delay="1000">
+                        龙王普拉顿桑克斯
+                    </span> •
+                    <span class="preset" data-tooltip="組態" data-tooltip-show-delay="1000">
+                        无规则
+                    </span> •
+                    <span class="tick-rate" data-tooltip="運算頻率" data-tooltip-show-delay="1000">
+                        ?
+                    </span>
+                </div>
+            </td>
+            <td class="players">
+                <span class="occupied">0</span> /
+                <span class="max">∞</span>
+            </td>
+            <td class="less-padding server-icons">
+                <i class="icon-servertype icon-servertype-2"></i>
+            </td>
+            <td class="ping no-separator">
+                -
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Add CSS styles for the table */
+        table {
+            width: 60%;
+            border-collapse: collapse;
+            margin: 0 auto;
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e0e0e0;
+        }
+
+        .map-thumb img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .server-name {
+            font-weight: bold;
+        }
+
+        .country-flag img {
+            max-width: 20px;
+            height: auto;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+
+        .mode, .map, .preset, .tick-rate {
+            margin-right: 10px;
+        }
+
+        .occupied {
+            color: rgb(18, 155, 214);
+        }
+
+        .max {
+            color: rgb(18, 155, 214);
+        }
+
+        .icon-servertype {
+            font-size: 24px;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr class="server-row trigger-el" data-guid="0c585f5a-06f6-4baf-b222-f81bdb479f95" data-game="2048" data-platform="1" data-role="1">
+            <td class="map less-padding no-separator">
+                <div class="map-thumb">
+                    <img src="https://github.com/Asuka-EVA-02/Knight-Platform/blob/main/%5BJ4BPBLUIRJ3DV%7BNF%7D~9FVY.png?raw=true" alt="荒野遊蹤">
+                </div>
+                <div class="loader small"></div>
+            </td>
+            <td class="server less-padding floating-width" style="">
+                <div class="server-name">
+                    老龙 Old Long
+                </div>
+                <div class="server-details">
+                    <div class="expansions pull-right"></div>
+                    <span class="country-flag">
+                    </span>
+                    <span class="mode" data-tooltip="模式" data-tooltip-show-delay="1000">
+                        无缝2.0
+                    </span> •
+                    <span class="map" data-tooltip="地圖" data-tooltip-show-delay="1000">
+                        龙王普拉顿桑克斯
+                    </span> •
+                    <span class="preset" data-tooltip="組態" data-tooltip-show-delay="1000">
+                        无规则
+                    </span> •
+                    <span class="tick-rate" data-tooltip="運算頻率" data-tooltip-show-delay="1000">
+                        ?
+                    </span>
+                </div>
+            </td>
+            <td class="players">
+                <span class="occupied">0</span> /
+                <span class="max">∞</span>
+            </td>
+            <td class="less-padding server-icons">
+                <i class="icon-servertype icon-servertype-2"></i>
+            </td>
+            <td class="ping no-separator">
+                -
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Add CSS styles for the table */
+        table {
+            width: 60%;
+            border-collapse: collapse;
+            margin: 0 auto;
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e0e0e0;
+        }
+
+        .map-thumb img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .server-name {
+            font-weight: bold;
+        }
+
+        .country-flag img {
+            max-width: 20px;
+            height: auto;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+
+        .mode, .map, .preset, .tick-rate {
+            margin-right: 10px;
+        }
+
+        .occupied {
+            color: rgb(18, 155, 214);
+        }
+
+        .max {
+            color: rgb(18, 155, 214);
+        }
+
+        .icon-servertype {
+            font-size: 24px;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr class="server-row trigger-el" data-guid="0c585f5a-06f6-4baf-b222-f81bdb479f95" data-game="2048" data-platform="1" data-role="1">
+            <td class="map less-padding no-separator">
+                <div class="map-thumb">
+                    <img src="https://github.com/Asuka-EVA-02/Knight-Platform/blob/main/%5BJ4BPBLUIRJ3DV%7BNF%7D~9FVY.png?raw=true" alt="荒野遊蹤">
+                </div>
+                <div class="loader small"></div>
+            </td>
+            <td class="server less-padding floating-width" style="">
+                <div class="server-name">
+                    老龙 Old Long
+                </div>
+                <div class="server-details">
+                    <div class="expansions pull-right"></div>
+                    <span class="country-flag">
+                    </span>
+                    <span class="mode" data-tooltip="模式" data-tooltip-show-delay="1000">
+                        无缝2.0
+                    </span> •
+                    <span class="map" data-tooltip="地圖" data-tooltip-show-delay="1000">
+                        龙王普拉顿桑克斯
+                    </span> •
+                    <span class="preset" data-tooltip="組態" data-tooltip-show-delay="1000">
+                        无规则
+                    </span> •
+                    <span class="tick-rate" data-tooltip="運算頻率" data-tooltip-show-delay="1000">
+                        ?
+                    </span>
+                </div>
+            </td>
+            <td class="players">
+                <span class="occupied">0</span> /
+                <span class="max">∞</span>
+            </td>
+            <td class="less-padding server-icons">
+                <i class="icon-servertype icon-servertype-2"></i>
+            </td>
+            <td class="ping no-separator">
+                -
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Add CSS styles for the table */
+        table {
+            width: 60%;
+            border-collapse: collapse;
+            margin: 0 auto;
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e0e0e0;
+        }
+
+        .map-thumb img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .server-name {
+            font-weight: bold;
+        }
+
+        .country-flag img {
+            max-width: 20px;
+            height: auto;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+
+        .mode, .map, .preset, .tick-rate {
+            margin-right: 10px;
+        }
+
+        .occupied {
+            color: rgb(18, 155, 214);
+        }
+
+        .max {
+            color: rgb(18, 155, 214);
+        }
+
+        .icon-servertype {
+            font-size: 24px;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr class="server-row trigger-el" data-guid="0c585f5a-06f6-4baf-b222-f81bdb479f95" data-game="2048" data-platform="1" data-role="1">
+            <td class="map less-padding no-separator">
+                <div class="map-thumb">
+                    <img src="https://github.com/Asuka-EVA-02/Knight-Platform/blob/main/%5BJ4BPBLUIRJ3DV%7BNF%7D~9FVY.png?raw=true" alt="荒野遊蹤">
+                </div>
+                <div class="loader small"></div>
+            </td>
+            <td class="server less-padding floating-width" style="">
+                <div class="server-name">
+                    老龙 Old Long
+                </div>
+                <div class="server-details">
+                    <div class="expansions pull-right"></div>
+                    <span class="country-flag">
+                    </span>
+                    <span class="mode" data-tooltip="模式" data-tooltip-show-delay="1000">
+                        无缝2.0
+                    </span> •
+                    <span class="map" data-tooltip="地圖" data-tooltip-show-delay="1000">
+                        龙王普拉顿桑克斯
+                    </span> •
+                    <span class="preset" data-tooltip="組態" data-tooltip-show-delay="1000">
+                        无规则
+                    </span> •
+                    <span class="tick-rate" data-tooltip="運算頻率" data-tooltip-show-delay="1000">
+                        ?
+                    </span>
+                </div>
+            </td>
+            <td class="players">
+                <span class="occupied">0</span> /
+                <span class="max">∞</span>
+            </td>
+            <td class="less-padding server-icons">
+                <i class="icon-servertype icon-servertype-2"></i>
+            </td>
+            <td class="ping no-separator">
+                -
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Add CSS styles for the table */
+        table {
+            width: 60%;
+            border-collapse: collapse;
+            margin: 0 auto;
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e0e0e0;
+        }
+
+        .map-thumb img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .server-name {
+            font-weight: bold;
+        }
+
+        .country-flag img {
+            max-width: 20px;
+            height: auto;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+
+        .mode, .map, .preset, .tick-rate {
+            margin-right: 10px;
+        }
+
+        .occupied {
+            color: rgb(18, 155, 214);
+        }
+
+        .max {
+            color: rgb(18, 155, 214);
+        }
+
+        .icon-servertype {
+            font-size: 24px;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr class="server-row trigger-el" data-guid="0c585f5a-06f6-4baf-b222-f81bdb479f95" data-game="2048" data-platform="1" data-role="1">
+            <td class="map less-padding no-separator">
+                <div class="map-thumb">
+                    <img src="https://github.com/Asuka-EVA-02/Knight-Platform/blob/main/%5BJ4BPBLUIRJ3DV%7BNF%7D~9FVY.png?raw=true" alt="荒野遊蹤">
+                </div>
+                <div class="loader small"></div>
+            </td>
+            <td class="server less-padding floating-width" style="">
+                <div class="server-name">
+                    老龙 Old Long
+                </div>
+                <div class="server-details">
+                    <div class="expansions pull-right"></div>
+                    <span class="country-flag">
+                    </span>
+                    <span class="mode" data-tooltip="模式" data-tooltip-show-delay="1000">
+                        无缝2.0
+                    </span> •
+                    <span class="map" data-tooltip="地圖" data-tooltip-show-delay="1000">
+                        龙王普拉顿桑克斯
+                    </span> •
+                    <span class="preset" data-tooltip="組態" data-tooltip-show-delay="1000">
+                        无规则
+                    </span> •
+                    <span class="tick-rate" data-tooltip="運算頻率" data-tooltip-show-delay="1000">
+                        ?
+                    </span>
+                </div>
+            </td>
+            <td class="players">
+                <span class="occupied">0</span> /
+                <span class="max">∞</span>
+            </td>
+            <td class="less-padding server-icons">
+                <i class="icon-servertype icon-servertype-2"></i>
+            </td>
+            <td class="ping no-separator">
+                -
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Add CSS styles for the table */
+        table {
+            width: 60%;
+            border-collapse: collapse;
+            margin: 0 auto;
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e0e0e0;
+        }
+
+        .map-thumb img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .server-name {
+            font-weight: bold;
+        }
+
+        .country-flag img {
+            max-width: 20px;
+            height: auto;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+
+        .mode, .map, .preset, .tick-rate {
+            margin-right: 10px;
+        }
+
+        .occupied {
+            color: rgb(18, 155, 214);
+        }
+
+        .max {
+            color: rgb(18, 155, 214);
+        }
+
+        .icon-servertype {
+            font-size: 24px;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr class="server-row trigger-el" data-guid="0c585f5a-06f6-4baf-b222-f81bdb479f95" data-game="2048" data-platform="1" data-role="1">
+            <td class="map less-padding no-separator">
+                <div class="map-thumb">
+                    <img src="https://github.com/Asuka-EVA-02/Knight-Platform/blob/main/%5BJ4BPBLUIRJ3DV%7BNF%7D~9FVY.png?raw=true" alt="荒野遊蹤">
+                </div>
+                <div class="loader small"></div>
+            </td>
+            <td class="server less-padding floating-width" style="">
+                <div class="server-name">
+                    老龙 Old Long
+                </div>
+                <div class="server-details">
+                    <div class="expansions pull-right"></div>
+                    <span class="country-flag">
+                    </span>
+                    <span class="mode" data-tooltip="模式" data-tooltip-show-delay="1000">
+                        无缝2.0
+                    </span> •
+                    <span class="map" data-tooltip="地圖" data-tooltip-show-delay="1000">
+                        龙王普拉顿桑克斯
+                    </span> •
+                    <span class="preset" data-tooltip="組態" data-tooltip-show-delay="1000">
+                        无规则
+                    </span> •
+                    <span class="tick-rate" data-tooltip="運算頻率" data-tooltip-show-delay="1000">
+                        ?
+                    </span>
+                </div>
+            </td>
+            <td class="players">
+                <span class="occupied">0</span> /
+                <span class="max">∞</span>
+            </td>
+            <td class="less-padding server-icons">
+                <i class="icon-servertype icon-servertype-2"></i>
+            </td>
+            <td class="ping no-separator">
+                -
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Add CSS styles for the table */
+        table {
+            width: 60%;
+            border-collapse: collapse;
+            margin: 0 auto;
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e0e0e0;
+        }
+
+        .map-thumb img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .server-name {
+            font-weight: bold;
+        }
+
+        .country-flag img {
+            max-width: 20px;
+            height: auto;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+
+        .mode, .map, .preset, .tick-rate {
+            margin-right: 10px;
+        }
+
+        .occupied {
+            color: rgb(18, 155, 214);
+        }
+
+        .max {
+            color: rgb(18, 155, 214);
+        }
+
+        .icon-servertype {
+            font-size: 24px;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr class="server-row trigger-el" data-guid="0c585f5a-06f6-4baf-b222-f81bdb479f95" data-game="2048" data-platform="1" data-role="1">
+            <td class="map less-padding no-separator">
+                <div class="map-thumb">
+                    <img src="https://github.com/Asuka-EVA-02/Knight-Platform/blob/main/%5BJ4BPBLUIRJ3DV%7BNF%7D~9FVY.png?raw=true" alt="荒野遊蹤">
+                </div>
+                <div class="loader small"></div>
+            </td>
+            <td class="server less-padding floating-width" style="">
+                <div class="server-name">
+                    老龙 Old Long
+                </div>
+                <div class="server-details">
+                    <div class="expansions pull-right"></div>
+                    <span class="country-flag">
+                    </span>
+                    <span class="mode" data-tooltip="模式" data-tooltip-show-delay="1000">
+                        无缝2.0
+                    </span> •
+                    <span class="map" data-tooltip="地圖" data-tooltip-show-delay="1000">
+                        龙王普拉顿桑克斯
+                    </span> •
+                    <span class="preset" data-tooltip="組態" data-tooltip-show-delay="1000">
+                        无规则
+                    </span> •
+                    <span class="tick-rate" data-tooltip="運算頻率" data-tooltip-show-delay="1000">
+                        ?
+                    </span>
+                </div>
+            </td>
+            <td class="players">
+                <span class="occupied">0</span> /
+                <span class="max">∞</span>
+            </td>
+            <td class="less-padding server-icons">
+                <i class="icon-servertype icon-servertype-2"></i>
+            </td>
+            <td class="ping no-separator">
+                -
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Add CSS styles for the table */
+        table {
+            width: 60%;
+            border-collapse: collapse;
+            margin: 0 auto;
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e0e0e0;
+        }
+
+        .map-thumb img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .server-name {
+            font-weight: bold;
+        }
+
+        .country-flag img {
+            max-width: 20px;
+            height: auto;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+
+        .mode, .map, .preset, .tick-rate {
+            margin-right: 10px;
+        }
+
+        .occupied {
+            color: rgb(18, 155, 214);
+        }
+
+        .max {
+            color: rgb(18, 155, 214);
+        }
+
+        .icon-servertype {
+            font-size: 24px;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr class="server-row trigger-el" data-guid="0c585f5a-06f6-4baf-b222-f81bdb479f95" data-game="2048" data-platform="1" data-role="1">
+            <td class="map less-padding no-separator">
+                <div class="map-thumb">
+                    <img src="https://github.com/Asuka-EVA-02/Knight-Platform/blob/main/%5BJ4BPBLUIRJ3DV%7BNF%7D~9FVY.png?raw=true" alt="荒野遊蹤">
+                </div>
+                <div class="loader small"></div>
+            </td>
+            <td class="server less-padding floating-width" style="">
+                <div class="server-name">
+                    老龙 Old Long
+                </div>
+                <div class="server-details">
+                    <div class="expansions pull-right"></div>
+                    <span class="country-flag">
+                    </span>
+                    <span class="mode" data-tooltip="模式" data-tooltip-show-delay="1000">
+                        无缝2.0
+                    </span> •
+                    <span class="map" data-tooltip="地圖" data-tooltip-show-delay="1000">
+                        龙王普拉顿桑克斯
+                    </span> •
+                    <span class="preset" data-tooltip="組態" data-tooltip-show-delay="1000">
+                        无规则
+                    </span> •
+                    <span class="tick-rate" data-tooltip="運算頻率" data-tooltip-show-delay="1000">
+                        ?
+                    </span>
+                </div>
+            </td>
+            <td class="players">
+                <span class="occupied">0</span> /
+                <span class="max">∞</span>
+            </td>
+            <td class="less-padding server-icons">
+                <i class="icon-servertype icon-servertype-2"></i>
+            </td>
+            <td class="ping no-separator">
+                -
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Add CSS styles for the table */
+        table {
+            width: 60%;
+            border-collapse: collapse;
+            margin: 0 auto;
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e0e0e0;
+        }
+
+        .map-thumb img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .server-name {
+            font-weight: bold;
+        }
+
+        .country-flag img {
+            max-width: 20px;
+            height: auto;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+
+        .mode, .map, .preset, .tick-rate {
+            margin-right: 10px;
+        }
+
+        .occupied {
+            color: rgb(18, 155, 214);
+        }
+
+        .max {
+            color: rgb(18, 155, 214);
+        }
+
+        .icon-servertype {
+            font-size: 24px;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr class="server-row trigger-el" data-guid="0c585f5a-06f6-4baf-b222-f81bdb479f95" data-game="2048" data-platform="1" data-role="1">
+            <td class="map less-padding no-separator">
+                <div class="map-thumb">
+                    <img src="https://github.com/Asuka-EVA-02/Knight-Platform/blob/main/%5BJ4BPBLUIRJ3DV%7BNF%7D~9FVY.png?raw=true" alt="荒野遊蹤">
+                </div>
+                <div class="loader small"></div>
+            </td>
+            <td class="server less-padding floating-width" style="">
+                <div class="server-name">
+                    老龙 Old Long
+                </div>
+                <div class="server-details">
+                    <div class="expansions pull-right"></div>
+                    <span class="country-flag">
+                    </span>
+                    <span class="mode" data-tooltip="模式" data-tooltip-show-delay="1000">
+                        无缝2.0
+                    </span> •
+                    <span class="map" data-tooltip="地圖" data-tooltip-show-delay="1000">
+                        龙王普拉顿桑克斯
+                    </span> •
+                    <span class="preset" data-tooltip="組態" data-tooltip-show-delay="1000">
+                        无规则
+                    </span> •
+                    <span class="tick-rate" data-tooltip="運算頻率" data-tooltip-show-delay="1000">
+                        ?
+                    </span>
+                </div>
+            </td>
+            <td class="players">
+                <span class="occupied">0</span> /
+                <span class="max">∞</span>
+            </td>
+            <td class="less-padding server-icons">
+                <i class="icon-servertype icon-servertype-2"></i>
+            </td>
+            <td class="ping no-separator">
+                -
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Add CSS styles for the table */
+        table {
+            width: 60%;
+            border-collapse: collapse;
+            margin: 0 auto;
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e0e0e0;
+        }
+
+        .map-thumb img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .server-name {
+            font-weight: bold;
+        }
+
+        .country-flag img {
+            max-width: 20px;
+            height: auto;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+
+        .mode, .map, .preset, .tick-rate {
+            margin-right: 10px;
+        }
+
+        .occupied {
+            color: rgb(18, 155, 214);
+        }
+
+        .max {
+            color: rgb(18, 155, 214);
+        }
+
+        .icon-servertype {
+            font-size: 24px;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr class="server-row trigger-el" data-guid="0c585f5a-06f6-4baf-b222-f81bdb479f95" data-game="2048" data-platform="1" data-role="1">
+            <td class="map less-padding no-separator">
+                <div class="map-thumb">
+                    <img src="https://github.com/Asuka-EVA-02/Knight-Platform/blob/main/%5BJ4BPBLUIRJ3DV%7BNF%7D~9FVY.png?raw=true" alt="荒野遊蹤">
+                </div>
+                <div class="loader small"></div>
+            </td>
+            <td class="server less-padding floating-width" style="">
+                <div class="server-name">
+                    老龙 Old Long
+                </div>
+                <div class="server-details">
+                    <div class="expansions pull-right"></div>
+                    <span class="country-flag">
+                    </span>
+                    <span class="mode" data-tooltip="模式" data-tooltip-show-delay="1000">
+                        无缝2.0
+                    </span> •
+                    <span class="map" data-tooltip="地圖" data-tooltip-show-delay="1000">
+                        龙王普拉顿桑克斯
+                    </span> •
+                    <span class="preset" data-tooltip="組態" data-tooltip-show-delay="1000">
+                        无规则
+                    </span> •
+                    <span class="tick-rate" data-tooltip="運算頻率" data-tooltip-show-delay="1000">
+                        ?
+                    </span>
+                </div>
+            </td>
+            <td class="players">
+                <span class="occupied">0</span> /
+                <span class="max">∞</span>
+            </td>
+            <td class="less-padding server-icons">
+                <i class="icon-servertype icon-servertype-2"></i>
+            </td>
+            <td class="ping no-separator">
+                -
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Add CSS styles for the table */
+        table {
+            width: 60%;
+            border-collapse: collapse;
+            margin: 0 auto;
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e0e0e0;
+        }
+
+        .map-thumb img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .server-name {
+            font-weight: bold;
+        }
+
+        .country-flag img {
+            max-width: 20px;
+            height: auto;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+
+        .mode, .map, .preset, .tick-rate {
+            margin-right: 10px;
+        }
+
+        .occupied {
+            color: rgb(18, 155, 214);
+        }
+
+        .max {
+            color: rgb(18, 155, 214);
+        }
+
+        .icon-servertype {
+            font-size: 24px;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr class="server-row trigger-el" data-guid="0c585f5a-06f6-4baf-b222-f81bdb479f95" data-game="2048" data-platform="1" data-role="1">
+            <td class="map less-padding no-separator">
+                <div class="map-thumb">
+                    <img src="https://github.com/Asuka-EVA-02/Knight-Platform/blob/main/%5BJ4BPBLUIRJ3DV%7BNF%7D~9FVY.png?raw=true" alt="荒野遊蹤">
+                </div>
+                <div class="loader small"></div>
+            </td>
+            <td class="server less-padding floating-width" style="">
+                <div class="server-name">
+                    老龙 Old Long
+                </div>
+                <div class="server-details">
+                    <div class="expansions pull-right"></div>
+                    <span class="country-flag">
+                    </span>
+                    <span class="mode" data-tooltip="模式" data-tooltip-show-delay="1000">
+                        无缝2.0
+                    </span> •
+                    <span class="map" data-tooltip="地圖" data-tooltip-show-delay="1000">
+                        龙王普拉顿桑克斯
+                    </span> •
+                    <span class="preset" data-tooltip="組態" data-tooltip-show-delay="1000">
+                        无规则
+                    </span> •
+                    <span class="tick-rate" data-tooltip="運算頻率" data-tooltip-show-delay="1000">
+                        ?
+                    </span>
+                </div>
+            </td>
+            <td class="players">
+                <span class="occupied">0</span> /
+                <span class="max">∞</span>
+            </td>
+            <td class="less-padding server-icons">
+                <i class="icon-servertype icon-servertype-2"></i>
+            </td>
+            <td class="ping no-separator">
+                -
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Add CSS styles for the table */
+        table {
+            width: 60%;
+            border-collapse: collapse;
+            margin: 0 auto;
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e0e0e0;
+        }
+
+        .map-thumb img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .server-name {
+            font-weight: bold;
+        }
+
+        .country-flag img {
+            max-width: 20px;
+            height: auto;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+
+        .mode, .map, .preset, .tick-rate {
+            margin-right: 10px;
+        }
+
+        .occupied {
+            color: rgb(18, 155, 214);
+        }
+
+        .max {
+            color: rgb(18, 155, 214);
+        }
+
+        .icon-servertype {
+            font-size: 24px;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr class="server-row trigger-el" data-guid="0c585f5a-06f6-4baf-b222-f81bdb479f95" data-game="2048" data-platform="1" data-role="1">
+            <td class="map less-padding no-separator">
+                <div class="map-thumb">
+                    <img src="https://github.com/Asuka-EVA-02/Knight-Platform/blob/main/%5BJ4BPBLUIRJ3DV%7BNF%7D~9FVY.png?raw=true" alt="荒野遊蹤">
+                </div>
+                <div class="loader small"></div>
+            </td>
+            <td class="server less-padding floating-width" style="">
+                <div class="server-name">
+                    老龙 Old Long
+                </div>
+                <div class="server-details">
+                    <div class="expansions pull-right"></div>
+                    <span class="country-flag">
+                    </span>
+                    <span class="mode" data-tooltip="模式" data-tooltip-show-delay="1000">
+                        无缝2.0
+                    </span> •
+                    <span class="map" data-tooltip="地圖" data-tooltip-show-delay="1000">
+                        龙王普拉顿桑克斯
+                    </span> •
+                    <span class="preset" data-tooltip="組態" data-tooltip-show-delay="1000">
+                        无规则
+                    </span> •
+                    <span class="tick-rate" data-tooltip="運算頻率" data-tooltip-show-delay="1000">
+                        ?
+                    </span>
+                </div>
+            </td>
+            <td class="players">
+                <span class="occupied">0</span> /
+                <span class="max">∞</span>
+            </td>
+            <td class="less-padding server-icons">
+                <i class="icon-servertype icon-servertype-2"></i>
+            </td>
+            <td class="ping no-separator">
+                -
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Add CSS styles for the table */
+        table {
+            width: 60%;
+            border-collapse: collapse;
+            margin: 0 auto;
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e0e0e0;
+        }
+
+        .map-thumb img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .server-name {
+            font-weight: bold;
+        }
+
+        .country-flag img {
+            max-width: 20px;
+            height: auto;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+
+        .mode, .map, .preset, .tick-rate {
+            margin-right: 10px;
+        }
+
+        .occupied {
+            color: rgb(18, 155, 214);
+        }
+
+        .max {
+            color: rgb(18, 155, 214);
+        }
+
+        .icon-servertype {
+            font-size: 24px;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr class="server-row trigger-el" data-guid="0c585f5a-06f6-4baf-b222-f81bdb479f95" data-game="2048" data-platform="1" data-role="1">
+            <td class="map less-padding no-separator">
+                <div class="map-thumb">
+                    <img src="https://github.com/Asuka-EVA-02/Knight-Platform/blob/main/%5BJ4BPBLUIRJ3DV%7BNF%7D~9FVY.png?raw=true" alt="荒野遊蹤">
+                </div>
+                <div class="loader small"></div>
+            </td>
+            <td class="server less-padding floating-width" style="">
+                <div class="server-name">
+                    老龙 Old Long
+                </div>
+                <div class="server-details">
+                    <div class="expansions pull-right"></div>
+                    <span class="country-flag">
+                    </span>
+                    <span class="mode" data-tooltip="模式" data-tooltip-show-delay="1000">
+                        无缝2.0
+                    </span> •
+                    <span class="map" data-tooltip="地圖" data-tooltip-show-delay="1000">
+                        龙王普拉顿桑克斯
+                    </span> •
+                    <span class="preset" data-tooltip="組態" data-tooltip-show-delay="1000">
+                        无规则
+                    </span> •
+                    <span class="tick-rate" data-tooltip="運算頻率" data-tooltip-show-delay="1000">
+                        ?
+                    </span>
+                </div>
+            </td>
+            <td class="players">
+                <span class="occupied">0</span> /
+                <span class="max">∞</span>
+            </td>
+            <td class="less-padding server-icons">
+                <i class="icon-servertype icon-servertype-2"></i>
+            </td>
+            <td class="ping no-separator">
+                -
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Add CSS styles for the table */
+        table {
+            width: 60%;
+            border-collapse: collapse;
+            margin: 0 auto;
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e0e0e0;
+        }
+
+        .map-thumb img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .server-name {
+            font-weight: bold;
+        }
+
+        .country-flag img {
+            max-width: 20px;
+            height: auto;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+
+        .mode, .map, .preset, .tick-rate {
+            margin-right: 10px;
+        }
+
+        .occupied {
+            color: rgb(18, 155, 214);
+        }
+
+        .max {
+            color: rgb(18, 155, 214);
+        }
+
+        .icon-servertype {
+            font-size: 24px;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr class="server-row trigger-el" data-guid="0c585f5a-06f6-4baf-b222-f81bdb479f95" data-game="2048" data-platform="1" data-role="1">
+            <td class="map less-padding no-separator">
+                <div class="map-thumb">
+                    <img src="https://github.com/Asuka-EVA-02/Knight-Platform/blob/main/%5BJ4BPBLUIRJ3DV%7BNF%7D~9FVY.png?raw=true" alt="荒野遊蹤">
+                </div>
+                <div class="loader small"></div>
+            </td>
+            <td class="server less-padding floating-width" style="">
+                <div class="server-name">
+                    老龙 Old Long
+                </div>
+                <div class="server-details">
+                    <div class="expansions pull-right"></div>
+                    <span class="country-flag">
+                    </span>
+                    <span class="mode" data-tooltip="模式" data-tooltip-show-delay="1000">
+                        无缝2.0
+                    </span> •
+                    <span class="map" data-tooltip="地圖" data-tooltip-show-delay="1000">
+                        龙王普拉顿桑克斯
+                    </span> •
+                    <span class="preset" data-tooltip="組態" data-tooltip-show-delay="1000">
+                        无规则
+                    </span> •
+                    <span class="tick-rate" data-tooltip="運算頻率" data-tooltip-show-delay="1000">
+                        ?
+                    </span>
+                </div>
+            </td>
+            <td class="players">
+                <span class="occupied">0</span> /
+                <span class="max">∞</span>
+            </td>
+            <td class="less-padding server-icons">
+                <i class="icon-servertype icon-servertype-2"></i>
+            </td>
+            <td class="ping no-separator">
+                -
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Add CSS styles for the table */
+        table {
+            width: 60%;
+            border-collapse: collapse;
+            margin: 0 auto;
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e0e0e0;
+        }
+
+        .map-thumb img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .server-name {
+            font-weight: bold;
+        }
+
+        .country-flag img {
+            max-width: 20px;
+            height: auto;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+
+        .mode, .map, .preset, .tick-rate {
+            margin-right: 10px;
+        }
+
+        .occupied {
+            color: rgb(18, 155, 214);
+        }
+
+        .max {
+            color: rgb(18, 155, 214);
+        }
+
+        .icon-servertype {
+            font-size: 24px;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr class="server-row trigger-el" data-guid="0c585f5a-06f6-4baf-b222-f81bdb479f95" data-game="2048" data-platform="1" data-role="1">
+            <td class="map less-padding no-separator">
+                <div class="map-thumb">
+                    <img src="https://github.com/Asuka-EVA-02/Knight-Platform/blob/main/%5BJ4BPBLUIRJ3DV%7BNF%7D~9FVY.png?raw=true" alt="荒野遊蹤">
+                </div>
+                <div class="loader small"></div>
+            </td>
+            <td class="server less-padding floating-width" style="">
+                <div class="server-name">
+                    老龙 Old Long
+                </div>
+                <div class="server-details">
+                    <div class="expansions pull-right"></div>
+                    <span class="country-flag">
+                    </span>
+                    <span class="mode" data-tooltip="模式" data-tooltip-show-delay="1000">
+                        无缝2.0
+                    </span> •
+                    <span class="map" data-tooltip="地圖" data-tooltip-show-delay="1000">
+                        龙王普拉顿桑克斯
+                    </span> •
+                    <span class="preset" data-tooltip="組態" data-tooltip-show-delay="1000">
+                        无规则
+                    </span> •
+                    <span class="tick-rate" data-tooltip="運算頻率" data-tooltip-show-delay="1000">
+                        ?
+                    </span>
+                </div>
+            </td>
+            <td class="players">
+                <span class="occupied">0</span> /
+                <span class="max">∞</span>
+            </td>
+            <td class="less-padding server-icons">
+                <i class="icon-servertype icon-servertype-2"></i>
+            </td>
+            <td class="ping no-separator">
+                -
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Add CSS styles for the table */
+        table {
+            width: 60%;
+            border-collapse: collapse;
+            margin: 0 auto;
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e0e0e0;
+        }
+
+        .map-thumb img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .server-name {
+            font-weight: bold;
+        }
+
+        .country-flag img {
+            max-width: 20px;
+            height: auto;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+
+        .mode, .map, .preset, .tick-rate {
+            margin-right: 10px;
+        }
+
+        .occupied {
+            color: rgb(18, 155, 214);
+        }
+
+        .max {
+            color: rgb(18, 155, 214);
+        }
+
+        .icon-servertype {
+            font-size: 24px;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr class="server-row trigger-el" data-guid="0c585f5a-06f6-4baf-b222-f81bdb479f95" data-game="2048" data-platform="1" data-role="1">
+            <td class="map less-padding no-separator">
+                <div class="map-thumb">
+                    <img src="https://github.com/Asuka-EVA-02/Knight-Platform/blob/main/%5BJ4BPBLUIRJ3DV%7BNF%7D~9FVY.png?raw=true" alt="荒野遊蹤">
+                </div>
+                <div class="loader small"></div>
+            </td>
+            <td class="server less-padding floating-width" style="">
+                <div class="server-name">
+                    老龙 Old Long
+                </div>
+                <div class="server-details">
+                    <div class="expansions pull-right"></div>
+                    <span class="country-flag">
+                    </span>
+                    <span class="mode" data-tooltip="模式" data-tooltip-show-delay="1000">
+                        无缝2.0
+                    </span> •
+                    <span class="map" data-tooltip="地圖" data-tooltip-show-delay="1000">
+                        龙王普拉顿桑克斯
+                    </span> •
+                    <span class="preset" data-tooltip="組態" data-tooltip-show-delay="1000">
+                        无规则
+                    </span> •
+                    <span class="tick-rate" data-tooltip="運算頻率" data-tooltip-show-delay="1000">
+                        ?
+                    </span>
+                </div>
+            </td>
+            <td class="players">
+                <span class="occupied">0</span> /
+                <span class="max">∞</span>
+            </td>
+            <td class="less-padding server-icons">
+                <i class="icon-servertype icon-servertype-2"></i>
+            </td>
+            <td class="ping no-separator">
+                -
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Add CSS styles for the table */
+        table {
+            width: 60%;
+            border-collapse: collapse;
+            margin: 0 auto;
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e0e0e0;
+        }
+
+        .map-thumb img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .server-name {
+            font-weight: bold;
+        }
+
+        .country-flag img {
+            max-width: 20px;
+            height: auto;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+
+        .mode, .map, .preset, .tick-rate {
+            margin-right: 10px;
+        }
+
+        .occupied {
+            color: rgb(18, 155, 214);
+        }
+
+        .max {
+            color: rgb(18, 155, 214);
+        }
+
+        .icon-servertype {
+            font-size: 24px;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr class="server-row trigger-el" data-guid="0c585f5a-06f6-4baf-b222-f81bdb479f95" data-game="2048" data-platform="1" data-role="1">
+            <td class="map less-padding no-separator">
+                <div class="map-thumb">
+                    <img src="https://github.com/Asuka-EVA-02/Knight-Platform/blob/main/%5BJ4BPBLUIRJ3DV%7BNF%7D~9FVY.png?raw=true" alt="荒野遊蹤">
+                </div>
+                <div class="loader small"></div>
+            </td>
+            <td class="server less-padding floating-width" style="">
+                <div class="server-name">
+                    老龙 Old Long
+                </div>
+                <div class="server-details">
+                    <div class="expansions pull-right"></div>
+                    <span class="country-flag">
+                    </span>
+                    <span class="mode" data-tooltip="模式" data-tooltip-show-delay="1000">
+                        无缝2.0
+                    </span> •
+                    <span class="map" data-tooltip="地圖" data-tooltip-show-delay="1000">
+                        龙王普拉顿桑克斯
+                    </span> •
+                    <span class="preset" data-tooltip="組態" data-tooltip-show-delay="1000">
+                        无规则
+                    </span> •
+                    <span class="tick-rate" data-tooltip="運算頻率" data-tooltip-show-delay="1000">
+                        ?
+                    </span>
+                </div>
+            </td>
+            <td class="players">
+                <span class="occupied">0</span> /
+                <span class="max">∞</span>
+            </td>
+            <td class="less-padding server-icons">
+                <i class="icon-servertype icon-servertype-2"></i>
+            </td>
+            <td class="ping no-separator">
+                -
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Add CSS styles for the table */
+        table {
+            width: 60%;
+            border-collapse: collapse;
+            margin: 0 auto;
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e0e0e0;
+        }
+
+        .map-thumb img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .server-name {
+            font-weight: bold;
+        }
+
+        .country-flag img {
+            max-width: 20px;
+            height: auto;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+
+        .mode, .map, .preset, .tick-rate {
+            margin-right: 10px;
+        }
+
+        .occupied {
+            color: rgb(18, 155, 214);
+        }
+
+        .max {
+            color: rgb(18, 155, 214);
+        }
+
+        .icon-servertype {
+            font-size: 24px;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr class="server-row trigger-el" data-guid="0c585f5a-06f6-4baf-b222-f81bdb479f95" data-game="2048" data-platform="1" data-role="1">
+            <td class="map less-padding no-separator">
+                <div class="map-thumb">
+                    <img src="https://github.com/Asuka-EVA-02/Knight-Platform/blob/main/%5BJ4BPBLUIRJ3DV%7BNF%7D~9FVY.png?raw=true" alt="荒野遊蹤">
+                </div>
+                <div class="loader small"></div>
+            </td>
+            <td class="server less-padding floating-width" style="">
+                <div class="server-name">
+                    老龙 Old Long
+                </div>
+                <div class="server-details">
+                    <div class="expansions pull-right"></div>
+                    <span class="country-flag">
+                    </span>
+                    <span class="mode" data-tooltip="模式" data-tooltip-show-delay="1000">
+                        无缝2.0
+                    </span> •
+                    <span class="map" data-tooltip="地圖" data-tooltip-show-delay="1000">
+                        龙王普拉顿桑克斯
+                    </span> •
+                    <span class="preset" data-tooltip="組態" data-tooltip-show-delay="1000">
+                        无规则
+                    </span> •
+                    <span class="tick-rate" data-tooltip="運算頻率" data-tooltip-show-delay="1000">
+                        ?
+                    </span>
+                </div>
+            </td>
+            <td class="players">
+                <span class="occupied">0</span> /
+                <span class="max">∞</span>
+            </td>
+            <td class="less-padding server-icons">
+                <i class="icon-servertype icon-servertype-2"></i>
+            </td>
+            <td class="ping no-separator">
+                -
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Add CSS styles for the table */
+        table {
+            width: 60%;
+            border-collapse: collapse;
+            margin: 0 auto;
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e0e0e0;
+        }
+
+        .map-thumb img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .server-name {
+            font-weight: bold;
+        }
+
+        .country-flag img {
+            max-width: 20px;
+            height: auto;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+
+        .mode, .map, .preset, .tick-rate {
+            margin-right: 10px;
+        }
+
+        .occupied {
+            color: rgb(18, 155, 214);
+        }
+
+        .max {
+            color: rgb(18, 155, 214);
+        }
+
+        .icon-servertype {
+            font-size: 24px;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr class="server-row trigger-el" data-guid="0c585f5a-06f6-4baf-b222-f81bdb479f95" data-game="2048" data-platform="1" data-role="1">
+            <td class="map less-padding no-separator">
+                <div class="map-thumb">
+                    <img src="https://github.com/Asuka-EVA-02/Knight-Platform/blob/main/%5BJ4BPBLUIRJ3DV%7BNF%7D~9FVY.png?raw=true" alt="荒野遊蹤">
+                </div>
+                <div class="loader small"></div>
+            </td>
+            <td class="server less-padding floating-width" style="">
+                <div class="server-name">
+                    老龙 Old Long
+                </div>
+                <div class="server-details">
+                    <div class="expansions pull-right"></div>
+                    <span class="country-flag">
+                    </span>
+                    <span class="mode" data-tooltip="模式" data-tooltip-show-delay="1000">
+                        无缝2.0
+                    </span> •
+                    <span class="map" data-tooltip="地圖" data-tooltip-show-delay="1000">
+                        龙王普拉顿桑克斯
+                    </span> •
+                    <span class="preset" data-tooltip="組態" data-tooltip-show-delay="1000">
+                        无规则
+                    </span> •
+                    <span class="tick-rate" data-tooltip="運算頻率" data-tooltip-show-delay="1000">
+                        ?
+                    </span>
+                </div>
+            </td>
+            <td class="players">
+                <span class="occupied">0</span> /
+                <span class="max">∞</span>
+            </td>
+            <td class="less-padding server-icons">
+                <i class="icon-servertype icon-servertype-2"></i>
+            </td>
+            <td class="ping no-separator">
+                -
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Add CSS styles for the table */
+        table {
+            width: 60%;
+            border-collapse: collapse;
+            margin: 0 auto;
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e0e0e0;
+        }
+
+        .map-thumb img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .server-name {
+            font-weight: bold;
+        }
+
+        .country-flag img {
+            max-width: 20px;
+            height: auto;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+
+        .mode, .map, .preset, .tick-rate {
+            margin-right: 10px;
+        }
+
+        .occupied {
+            color: rgb(18, 155, 214);
+        }
+
+        .max {
+            color: rgb(18, 155, 214);
+        }
+
+        .icon-servertype {
+            font-size: 24px;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr class="server-row trigger-el" data-guid="0c585f5a-06f6-4baf-b222-f81bdb479f95" data-game="2048" data-platform="1" data-role="1">
+            <td class="map less-padding no-separator">
+                <div class="map-thumb">
+                    <img src="https://github.com/Asuka-EVA-02/Knight-Platform/blob/main/%5BJ4BPBLUIRJ3DV%7BNF%7D~9FVY.png?raw=true" alt="荒野遊蹤">
+                </div>
+                <div class="loader small"></div>
+            </td>
+            <td class="server less-padding floating-width" style="">
+                <div class="server-name">
+                    老龙 Old Long
+                </div>
+                <div class="server-details">
+                    <div class="expansions pull-right"></div>
+                    <span class="country-flag">
+                    </span>
+                    <span class="mode" data-tooltip="模式" data-tooltip-show-delay="1000">
+                        无缝2.0
+                    </span> •
+                    <span class="map" data-tooltip="地圖" data-tooltip-show-delay="1000">
+                        龙王普拉顿桑克斯
+                    </span> •
+                    <span class="preset" data-tooltip="組態" data-tooltip-show-delay="1000">
+                        无规则
+                    </span> •
+                    <span class="tick-rate" data-tooltip="運算頻率" data-tooltip-show-delay="1000">
+                        ?
+                    </span>
+                </div>
+            </td>
+            <td class="players">
+                <span class="occupied">0</span> /
+                <span class="max">∞</span>
+            </td>
+            <td class="less-padding server-icons">
+                <i class="icon-servertype icon-servertype-2"></i>
+            </td>
+            <td class="ping no-separator">
+                -
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Add CSS styles for the table */
+        table {
+            width: 60%;
+            border-collapse: collapse;
+            margin: 0 auto;
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e0e0e0;
+        }
+
+        .map-thumb img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .server-name {
+            font-weight: bold;
+        }
+
+        .country-flag img {
+            max-width: 20px;
+            height: auto;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+
+        .mode, .map, .preset, .tick-rate {
+            margin-right: 10px;
+        }
+
+        .occupied {
+            color: rgb(18, 155, 214);
+        }
+
+        .max {
+            color: rgb(18, 155, 214);
+        }
+
+        .icon-servertype {
+            font-size: 24px;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr class="server-row trigger-el" data-guid="0c585f5a-06f6-4baf-b222-f81bdb479f95" data-game="2048" data-platform="1" data-role="1">
+            <td class="map less-padding no-separator">
+                <div class="map-thumb">
+                    <img src="https://github.com/Asuka-EVA-02/Knight-Platform/blob/main/%5BJ4BPBLUIRJ3DV%7BNF%7D~9FVY.png?raw=true" alt="荒野遊蹤">
+                </div>
+                <div class="loader small"></div>
+            </td>
+            <td class="server less-padding floating-width" style="">
+                <div class="server-name">
+                    老龙 Old Long
+                </div>
+                <div class="server-details">
+                    <div class="expansions pull-right"></div>
+                    <span class="country-flag">
+                    </span>
+                    <span class="mode" data-tooltip="模式" data-tooltip-show-delay="1000">
+                        无缝2.0
+                    </span> •
+                    <span class="map" data-tooltip="地圖" data-tooltip-show-delay="1000">
+                        龙王普拉顿桑克斯
+                    </span> •
+                    <span class="preset" data-tooltip="組態" data-tooltip-show-delay="1000">
+                        无规则
+                    </span> •
+                    <span class="tick-rate" data-tooltip="運算頻率" data-tooltip-show-delay="1000">
+                        ?
+                    </span>
+                </div>
+            </td>
+            <td class="players">
+                <span class="occupied">0</span> /
+                <span class="max">∞</span>
+            </td>
+            <td class="less-padding server-icons">
+                <i class="icon-servertype icon-servertype-2"></i>
+            </td>
+            <td class="ping no-separator">
+                -
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Add CSS styles for the table */
+        table {
+            width: 60%;
+            border-collapse: collapse;
+            margin: 0 auto;
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e0e0e0;
+        }
+
+        .map-thumb img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .server-name {
+            font-weight: bold;
+        }
+
+        .country-flag img {
+            max-width: 20px;
+            height: auto;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+
+        .mode, .map, .preset, .tick-rate {
+            margin-right: 10px;
+        }
+
+        .occupied {
+            color: rgb(18, 155, 214);
+        }
+
+        .max {
+            color: rgb(18, 155, 214);
+        }
+
+        .icon-servertype {
+            font-size: 24px;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr class="server-row trigger-el" data-guid="0c585f5a-06f6-4baf-b222-f81bdb479f95" data-game="2048" data-platform="1" data-role="1">
+            <td class="map less-padding no-separator">
+                <div class="map-thumb">
+                    <img src="https://github.com/Asuka-EVA-02/Knight-Platform/blob/main/%5BJ4BPBLUIRJ3DV%7BNF%7D~9FVY.png?raw=true" alt="荒野遊蹤">
+                </div>
+                <div class="loader small"></div>
+            </td>
+            <td class="server less-padding floating-width" style="">
+                <div class="server-name">
+                    老龙 Old Long
+                </div>
+                <div class="server-details">
+                    <div class="expansions pull-right"></div>
+                    <span class="country-flag">
+                    </span>
+                    <span class="mode" data-tooltip="模式" data-tooltip-show-delay="1000">
+                        无缝2.0
+                    </span> •
+                    <span class="map" data-tooltip="地圖" data-tooltip-show-delay="1000">
+                        龙王普拉顿桑克斯
+                    </span> •
+                    <span class="preset" data-tooltip="組態" data-tooltip-show-delay="1000">
+                        无规则
+                    </span> •
+                    <span class="tick-rate" data-tooltip="運算頻率" data-tooltip-show-delay="1000">
+                        ?
+                    </span>
+                </div>
+            </td>
+            <td class="players">
+                <span class="occupied">0</span> /
+                <span class="max">∞</span>
+            </td>
+            <td class="less-padding server-icons">
+                <i class="icon-servertype icon-servertype-2"></i>
+            </td>
+            <td class="ping no-separator">
+                -
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Add CSS styles for the table */
+        table {
+            width: 60%;
+            border-collapse: collapse;
+            margin: 0 auto;
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e0e0e0;
+        }
+
+        .map-thumb img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .server-name {
+            font-weight: bold;
+        }
+
+        .country-flag img {
+            max-width: 20px;
+            height: auto;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+
+        .mode, .map, .preset, .tick-rate {
+            margin-right: 10px;
+        }
+
+        .occupied {
+            color: rgb(18, 155, 214);
+        }
+
+        .max {
+            color: rgb(18, 155, 214);
+        }
+
+        .icon-servertype {
+            font-size: 24px;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr class="server-row trigger-el" data-guid="0c585f5a-06f6-4baf-b222-f81bdb479f95" data-game="2048" data-platform="1" data-role="1">
+            <td class="map less-padding no-separator">
+                <div class="map-thumb">
+                    <img src="https://github.com/Asuka-EVA-02/Knight-Platform/blob/main/%5BJ4BPBLUIRJ3DV%7BNF%7D~9FVY.png?raw=true" alt="荒野遊蹤">
+                </div>
+                <div class="loader small"></div>
+            </td>
+            <td class="server less-padding floating-width" style="">
+                <div class="server-name">
+                    老龙 Old Long
+                </div>
+                <div class="server-details">
+                    <div class="expansions pull-right"></div>
+                    <span class="country-flag">
+                    </span>
+                    <span class="mode" data-tooltip="模式" data-tooltip-show-delay="1000">
+                        无缝2.0
+                    </span> •
+                    <span class="map" data-tooltip="地圖" data-tooltip-show-delay="1000">
+                        龙王普拉顿桑克斯
+                    </span> •
+                    <span class="preset" data-tooltip="組態" data-tooltip-show-delay="1000">
+                        无规则
+                    </span> •
+                    <span class="tick-rate" data-tooltip="運算頻率" data-tooltip-show-delay="1000">
+                        ?
+                    </span>
+                </div>
+            </td>
+            <td class="players">
+                <span class="occupied">0</span> /
+                <span class="max">∞</span>
+            </td>
+            <td class="less-padding server-icons">
+                <i class="icon-servertype icon-servertype-2"></i>
+            </td>
+            <td class="ping no-separator">
+                -
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Add CSS styles for the table */
+        table {
+            width: 60%;
+            border-collapse: collapse;
+            margin: 0 auto;
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e0e0e0;
+        }
+
+        .map-thumb img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .server-name {
+            font-weight: bold;
+        }
+
+        .country-flag img {
+            max-width: 20px;
+            height: auto;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+
+        .mode, .map, .preset, .tick-rate {
+            margin-right: 10px;
+        }
+
+        .occupied {
+            color: rgb(18, 155, 214);
+        }
+
+        .max {
+            color: rgb(18, 155, 214);
+        }
+
+        .icon-servertype {
+            font-size: 24px;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr class="server-row trigger-el" data-guid="0c585f5a-06f6-4baf-b222-f81bdb479f95" data-game="2048" data-platform="1" data-role="1">
+            <td class="map less-padding no-separator">
+                <div class="map-thumb">
+                    <img src="https://github.com/Asuka-EVA-02/Knight-Platform/blob/main/%5BJ4BPBLUIRJ3DV%7BNF%7D~9FVY.png?raw=true" alt="荒野遊蹤">
+                </div>
+                <div class="loader small"></div>
+            </td>
+            <td class="server less-padding floating-width" style="">
+                <div class="server-name">
+                    老龙 Old Long
+                </div>
+                <div class="server-details">
+                    <div class="expansions pull-right"></div>
+                    <span class="country-flag">
+                    </span>
+                    <span class="mode" data-tooltip="模式" data-tooltip-show-delay="1000">
+                        无缝2.0
+                    </span> •
+                    <span class="map" data-tooltip="地圖" data-tooltip-show-delay="1000">
+                        龙王普拉顿桑克斯
+                    </span> •
+                    <span class="preset" data-tooltip="組態" data-tooltip-show-delay="1000">
+                        无规则
+                    </span> •
+                    <span class="tick-rate" data-tooltip="運算頻率" data-tooltip-show-delay="1000">
+                        ?
+                    </span>
+                </div>
+            </td>
+            <td class="players">
+                <span class="occupied">0</span> /
+                <span class="max">∞</span>
+            </td>
+            <td class="less-padding server-icons">
+                <i class="icon-servertype icon-servertype-2"></i>
+            </td>
+            <td class="ping no-separator">
+                -
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Add CSS styles for the table */
+        table {
+            width: 60%;
+            border-collapse: collapse;
+            margin: 0 auto;
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e0e0e0;
+        }
+
+        .map-thumb img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .server-name {
+            font-weight: bold;
+        }
+
+        .country-flag img {
+            max-width: 20px;
+            height: auto;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+
+        .mode, .map, .preset, .tick-rate {
+            margin-right: 10px;
+        }
+
+        .occupied {
+            color: rgb(18, 155, 214);
+        }
+
+        .max {
+            color: rgb(18, 155, 214);
+        }
+
+        .icon-servertype {
+            font-size: 24px;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr class="server-row trigger-el" data-guid="0c585f5a-06f6-4baf-b222-f81bdb479f95" data-game="2048" data-platform="1" data-role="1">
+            <td class="map less-padding no-separator">
+                <div class="map-thumb">
+                    <img src="https://github.com/Asuka-EVA-02/Knight-Platform/blob/main/%5BJ4BPBLUIRJ3DV%7BNF%7D~9FVY.png?raw=true" alt="荒野遊蹤">
+                </div>
+                <div class="loader small"></div>
+            </td>
+            <td class="server less-padding floating-width" style="">
+                <div class="server-name">
+                    老龙 Old Long
+                </div>
+                <div class="server-details">
+                    <div class="expansions pull-right"></div>
+                    <span class="country-flag">
+                    </span>
+                    <span class="mode" data-tooltip="模式" data-tooltip-show-delay="1000">
+                        无缝2.0
+                    </span> •
+                    <span class="map" data-tooltip="地圖" data-tooltip-show-delay="1000">
+                        龙王普拉顿桑克斯
+                    </span> •
+                    <span class="preset" data-tooltip="組態" data-tooltip-show-delay="1000">
+                        无规则
+                    </span> •
+                    <span class="tick-rate" data-tooltip="運算頻率" data-tooltip-show-delay="1000">
+                        ?
+                    </span>
+                </div>
+            </td>
+            <td class="players">
+                <span class="occupied">0</span> /
+                <span class="max">∞</span>
+            </td>
+            <td class="less-padding server-icons">
+                <i class="icon-servertype icon-servertype-2"></i>
+            </td>
+            <td class="ping no-separator">
+                -
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Add CSS styles for the table */
+        table {
+            width: 60%;
+            border-collapse: collapse;
+            margin: 0 auto;
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e0e0e0;
+        }
+
+        .map-thumb img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .server-name {
+            font-weight: bold;
+        }
+
+        .country-flag img {
+            max-width: 20px;
+            height: auto;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+
+        .mode, .map, .preset, .tick-rate {
+            margin-right: 10px;
+        }
+
+        .occupied {
+            color: rgb(18, 155, 214);
+        }
+
+        .max {
+            color: rgb(18, 155, 214);
+        }
+
+        .icon-servertype {
+            font-size: 24px;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr class="server-row trigger-el" data-guid="0c585f5a-06f6-4baf-b222-f81bdb479f95" data-game="2048" data-platform="1" data-role="1">
+            <td class="map less-padding no-separator">
+                <div class="map-thumb">
+                    <img src="https://github.com/Asuka-EVA-02/Knight-Platform/blob/main/%5BJ4BPBLUIRJ3DV%7BNF%7D~9FVY.png?raw=true" alt="荒野遊蹤">
+                </div>
+                <div class="loader small"></div>
+            </td>
+            <td class="server less-padding floating-width" style="">
+                <div class="server-name">
+                    老龙 Old Long
+                </div>
+                <div class="server-details">
+                    <div class="expansions pull-right"></div>
+                    <span class="country-flag">
+                    </span>
+                    <span class="mode" data-tooltip="模式" data-tooltip-show-delay="1000">
+                        无缝2.0
+                    </span> •
+                    <span class="map" data-tooltip="地圖" data-tooltip-show-delay="1000">
+                        龙王普拉顿桑克斯
+                    </span> •
+                    <span class="preset" data-tooltip="組態" data-tooltip-show-delay="1000">
+                        无规则
+                    </span> •
+                    <span class="tick-rate" data-tooltip="運算頻率" data-tooltip-show-delay="1000">
+                        ?
+                    </span>
+                </div>
+            </td>
+            <td class="players">
+                <span class="occupied">0</span> /
+                <span class="max">∞</span>
+            </td>
+            <td class="less-padding server-icons">
+                <i class="icon-servertype icon-servertype-2"></i>
+            </td>
+            <td class="ping no-separator">
+                -
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Add CSS styles for the table */
+        table {
+            width: 60%;
+            border-collapse: collapse;
+            margin: 0 auto;
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e0e0e0;
+        }
+
+        .map-thumb img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .server-name {
+            font-weight: bold;
+        }
+
+        .country-flag img {
+            max-width: 20px;
+            height: auto;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+
+        .mode, .map, .preset, .tick-rate {
+            margin-right: 10px;
+        }
+
+        .occupied {
+            color: rgb(18, 155, 214);
+        }
+
+        .max {
+            color: rgb(18, 155, 214);
+        }
+
+        .icon-servertype {
+            font-size: 24px;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr class="server-row trigger-el" data-guid="0c585f5a-06f6-4baf-b222-f81bdb479f95" data-game="2048" data-platform="1" data-role="1">
+            <td class="map less-padding no-separator">
+                <div class="map-thumb">
+                    <img src="https://github.com/Asuka-EVA-02/Knight-Platform/blob/main/%5BJ4BPBLUIRJ3DV%7BNF%7D~9FVY.png?raw=true" alt="荒野遊蹤">
+                </div>
+                <div class="loader small"></div>
+            </td>
+            <td class="server less-padding floating-width" style="">
+                <div class="server-name">
+                    老龙 Old Long
+                </div>
+                <div class="server-details">
+                    <div class="expansions pull-right"></div>
+                    <span class="country-flag">
+                    </span>
+                    <span class="mode" data-tooltip="模式" data-tooltip-show-delay="1000">
+                        无缝2.0
+                    </span> •
+                    <span class="map" data-tooltip="地圖" data-tooltip-show-delay="1000">
+                        龙王普拉顿桑克斯
+                    </span> •
+                    <span class="preset" data-tooltip="組態" data-tooltip-show-delay="1000">
+                        无规则
+                    </span> •
+                    <span class="tick-rate" data-tooltip="運算頻率" data-tooltip-show-delay="1000">
+                        ?
+                    </span>
+                </div>
+            </td>
+            <td class="players">
+                <span class="occupied">0</span> /
+                <span class="max">∞</span>
+            </td>
+            <td class="less-padding server-icons">
+                <i class="icon-servertype icon-servertype-2"></i>
+            </td>
+            <td class="ping no-separator">
+                -
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Add CSS styles for the table */
+        table {
+            width: 60%;
+            border-collapse: collapse;
+            margin: 0 auto;
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e0e0e0;
+        }
+
+        .map-thumb img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .server-name {
+            font-weight: bold;
+        }
+
+        .country-flag img {
+            max-width: 20px;
+            height: auto;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+
+        .mode, .map, .preset, .tick-rate {
+            margin-right: 10px;
+        }
+
+        .occupied {
+            color: rgb(18, 155, 214);
+        }
+
+        .max {
+            color: rgb(18, 155, 214);
+        }
+
+        .icon-servertype {
+            font-size: 24px;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr class="server-row trigger-el" data-guid="0c585f5a-06f6-4baf-b222-f81bdb479f95" data-game="2048" data-platform="1" data-role="1">
+            <td class="map less-padding no-separator">
+                <div class="map-thumb">
+                    <img src="https://github.com/Asuka-EVA-02/Knight-Platform/blob/main/%5BJ4BPBLUIRJ3DV%7BNF%7D~9FVY.png?raw=true" alt="荒野遊蹤">
+                </div>
+                <div class="loader small"></div>
+            </td>
+            <td class="server less-padding floating-width" style="">
+                <div class="server-name">
+                    老龙 Old Long
+                </div>
+                <div class="server-details">
+                    <div class="expansions pull-right"></div>
+                    <span class="country-flag">
+                    </span>
+                    <span class="mode" data-tooltip="模式" data-tooltip-show-delay="1000">
+                        无缝2.0
+                    </span> •
+                    <span class="map" data-tooltip="地圖" data-tooltip-show-delay="1000">
+                        龙王普拉顿桑克斯
+                    </span> •
+                    <span class="preset" data-tooltip="組態" data-tooltip-show-delay="1000">
+                        无规则
+                    </span> •
+                    <span class="tick-rate" data-tooltip="運算頻率" data-tooltip-show-delay="1000">
+                        ?
+                    </span>
+                </div>
+            </td>
+            <td class="players">
+                <span class="occupied">0</span> /
+                <span class="max">∞</span>
+            </td>
+            <td class="less-padding server-icons">
+                <i class="icon-servertype icon-servertype-2"></i>
+            </td>
+            <td class="ping no-separator">
+                -
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Add CSS styles for the table */
+        table {
+            width: 60%;
+            border-collapse: collapse;
+            margin: 0 auto;
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e0e0e0;
+        }
+
+        .map-thumb img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .server-name {
+            font-weight: bold;
+        }
+
+        .country-flag img {
+            max-width: 20px;
+            height: auto;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+
+        .mode, .map, .preset, .tick-rate {
+            margin-right: 10px;
+        }
+
+        .occupied {
+            color: rgb(18, 155, 214);
+        }
+
+        .max {
+            color: rgb(18, 155, 214);
+        }
+
+        .icon-servertype {
+            font-size: 24px;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr class="server-row trigger-el" data-guid="0c585f5a-06f6-4baf-b222-f81bdb479f95" data-game="2048" data-platform="1" data-role="1">
+            <td class="map less-padding no-separator">
+                <div class="map-thumb">
+                    <img src="https://github.com/Asuka-EVA-02/Knight-Platform/blob/main/%5BJ4BPBLUIRJ3DV%7BNF%7D~9FVY.png?raw=true" alt="荒野遊蹤">
+                </div>
+                <div class="loader small"></div>
+            </td>
+            <td class="server less-padding floating-width" style="">
+                <div class="server-name">
+                    老龙 Old Long
+                </div>
+                <div class="server-details">
+                    <div class="expansions pull-right"></div>
+                    <span class="country-flag">
+                    </span>
+                    <span class="mode" data-tooltip="模式" data-tooltip-show-delay="1000">
+                        无缝2.0
+                    </span> •
+                    <span class="map" data-tooltip="地圖" data-tooltip-show-delay="1000">
+                        龙王普拉顿桑克斯
+                    </span> •
+                    <span class="preset" data-tooltip="組態" data-tooltip-show-delay="1000">
+                        无规则
+                    </span> •
+                    <span class="tick-rate" data-tooltip="運算頻率" data-tooltip-show-delay="1000">
+                        ?
+                    </span>
+                </div>
+            </td>
+            <td class="players">
+                <span class="occupied">0</span> /
+                <span class="max">∞</span>
+            </td>
+            <td class="less-padding server-icons">
+                <i class="icon-servertype icon-servertype-2"></i>
+            </td>
+            <td class="ping no-separator">
+                -
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Add CSS styles for the table */
+        table {
+            width: 60%;
+            border-collapse: collapse;
+            margin: 0 auto;
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e0e0e0;
+        }
+
+        .map-thumb img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .server-name {
+            font-weight: bold;
+        }
+
+        .country-flag img {
+            max-width: 20px;
+            height: auto;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+
+        .mode, .map, .preset, .tick-rate {
+            margin-right: 10px;
+        }
+
+        .occupied {
+            color: rgb(18, 155, 214);
+        }
+
+        .max {
+            color: rgb(18, 155, 214);
+        }
+
+        .icon-servertype {
+            font-size: 24px;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr class="server-row trigger-el" data-guid="0c585f5a-06f6-4baf-b222-f81bdb479f95" data-game="2048" data-platform="1" data-role="1">
+            <td class="map less-padding no-separator">
+                <div class="map-thumb">
+                    <img src="https://github.com/Asuka-EVA-02/Knight-Platform/blob/main/%5BJ4BPBLUIRJ3DV%7BNF%7D~9FVY.png?raw=true" alt="荒野遊蹤">
+                </div>
+                <div class="loader small"></div>
+            </td>
+            <td class="server less-padding floating-width" style="">
+                <div class="server-name">
+                    老龙 Old Long
+                </div>
+                <div class="server-details">
+                    <div class="expansions pull-right"></div>
+                    <span class="country-flag">
+                    </span>
+                    <span class="mode" data-tooltip="模式" data-tooltip-show-delay="1000">
+                        无缝2.0
+                    </span> •
+                    <span class="map" data-tooltip="地圖" data-tooltip-show-delay="1000">
+                        龙王普拉顿桑克斯
+                    </span> •
+                    <span class="preset" data-tooltip="組態" data-tooltip-show-delay="1000">
+                        无规则
+                    </span> •
+                    <span class="tick-rate" data-tooltip="運算頻率" data-tooltip-show-delay="1000">
+                        ?
+                    </span>
+                </div>
+            </td>
+            <td class="players">
+                <span class="occupied">0</span> /
+                <span class="max">∞</span>
+            </td>
+            <td class="less-padding server-icons">
+                <i class="icon-servertype icon-servertype-2"></i>
+            </td>
+            <td class="ping no-separator">
+                -
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Add CSS styles for the table */
+        table {
+            width: 60%;
+            border-collapse: collapse;
+            margin: 0 auto;
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e0e0e0;
+        }
+
+        .map-thumb img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .server-name {
+            font-weight: bold;
+        }
+
+        .country-flag img {
+            max-width: 20px;
+            height: auto;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+
+        .mode, .map, .preset, .tick-rate {
+            margin-right: 10px;
+        }
+
+        .occupied {
+            color: rgb(18, 155, 214);
+        }
+
+        .max {
+            color: rgb(18, 155, 214);
+        }
+
+        .icon-servertype {
+            font-size: 24px;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr class="server-row trigger-el" data-guid="0c585f5a-06f6-4baf-b222-f81bdb479f95" data-game="2048" data-platform="1" data-role="1">
+            <td class="map less-padding no-separator">
+                <div class="map-thumb">
+                    <img src="https://github.com/Asuka-EVA-02/Knight-Platform/blob/main/%5BJ4BPBLUIRJ3DV%7BNF%7D~9FVY.png?raw=true" alt="荒野遊蹤">
+                </div>
+                <div class="loader small"></div>
+            </td>
+            <td class="server less-padding floating-width" style="">
+                <div class="server-name">
+                    老龙 Old Long
+                </div>
+                <div class="server-details">
+                    <div class="expansions pull-right"></div>
+                    <span class="country-flag">
+                    </span>
+                    <span class="mode" data-tooltip="模式" data-tooltip-show-delay="1000">
+                        无缝2.0
+                    </span> •
+                    <span class="map" data-tooltip="地圖" data-tooltip-show-delay="1000">
+                        龙王普拉顿桑克斯
+                    </span> •
+                    <span class="preset" data-tooltip="組態" data-tooltip-show-delay="1000">
+                        无规则
+                    </span> •
+                    <span class="tick-rate" data-tooltip="運算頻率" data-tooltip-show-delay="1000">
+                        ?
+                    </span>
+                </div>
+            </td>
+            <td class="players">
+                <span class="occupied">0</span> /
+                <span class="max">∞</span>
+            </td>
+            <td class="less-padding server-icons">
+                <i class="icon-servertype icon-servertype-2"></i>
+            </td>
+            <td class="ping no-separator">
+                -
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Add CSS styles for the table */
+        table {
+            width: 60%;
+            border-collapse: collapse;
+            margin: 0 auto;
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e0e0e0;
+        }
+
+        .map-thumb img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .server-name {
+            font-weight: bold;
+        }
+
+        .country-flag img {
+            max-width: 20px;
+            height: auto;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+
+        .mode, .map, .preset, .tick-rate {
+            margin-right: 10px;
+        }
+
+        .occupied {
+            color: rgb(18, 155, 214);
+        }
+
+        .max {
+            color: rgb(18, 155, 214);
+        }
+
+        .icon-servertype {
+            font-size: 24px;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr class="server-row trigger-el" data-guid="0c585f5a-06f6-4baf-b222-f81bdb479f95" data-game="2048" data-platform="1" data-role="1">
+            <td class="map less-padding no-separator">
+                <div class="map-thumb">
+                    <img src="https://github.com/Asuka-EVA-02/Knight-Platform/blob/main/%5BJ4BPBLUIRJ3DV%7BNF%7D~9FVY.png?raw=true" alt="荒野遊蹤">
+                </div>
+                <div class="loader small"></div>
+            </td>
+            <td class="server less-padding floating-width" style="">
+                <div class="server-name">
+                    老龙 Old Long
+                </div>
+                <div class="server-details">
+                    <div class="expansions pull-right"></div>
+                    <span class="country-flag">
+                    </span>
+                    <span class="mode" data-tooltip="模式" data-tooltip-show-delay="1000">
+                        无缝2.0
+                    </span> •
+                    <span class="map" data-tooltip="地圖" data-tooltip-show-delay="1000">
+                        龙王普拉顿桑克斯
+                    </span> •
+                    <span class="preset" data-tooltip="組態" data-tooltip-show-delay="1000">
+                        无规则
+                    </span> •
+                    <span class="tick-rate" data-tooltip="運算頻率" data-tooltip-show-delay="1000">
+                        ?
+                    </span>
+                </div>
+            </td>
+            <td class="players">
+                <span class="occupied">0</span> /
+                <span class="max">∞</span>
+            </td>
+            <td class="less-padding server-icons">
+                <i class="icon-servertype icon-servertype-2"></i>
+            </td>
+            <td class="ping no-separator">
+                -
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Add CSS styles for the table */
+        table {
+            width: 60%;
+            border-collapse: collapse;
+            margin: 0 auto;
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e0e0e0;
+        }
+
+        .map-thumb img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .server-name {
+            font-weight: bold;
+        }
+
+        .country-flag img {
+            max-width: 20px;
+            height: auto;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+
+        .mode, .map, .preset, .tick-rate {
+            margin-right: 10px;
+        }
+
+        .occupied {
+            color: rgb(18, 155, 214);
+        }
+
+        .max {
+            color: rgb(18, 155, 214);
+        }
+
+        .icon-servertype {
+            font-size: 24px;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr class="server-row trigger-el" data-guid="0c585f5a-06f6-4baf-b222-f81bdb479f95" data-game="2048" data-platform="1" data-role="1">
+            <td class="map less-padding no-separator">
+                <div class="map-thumb">
+                    <img src="https://github.com/Asuka-EVA-02/Knight-Platform/blob/main/%5BJ4BPBLUIRJ3DV%7BNF%7D~9FVY.png?raw=true" alt="荒野遊蹤">
+                </div>
+                <div class="loader small"></div>
+            </td>
+            <td class="server less-padding floating-width" style="">
+                <div class="server-name">
+                       老龙 Old Long
+                </div>
+                <div class="server-details">
+                    <div class="expansions pull-right"></div>
+                    <span class="country-flag">
+                    </span>
+                    <span class="mode" data-tooltip="模式" data-tooltip-show-delay="1000">
+                          无缝2.0
+                    </span> •
+                    <span class="map" data-tooltip="地圖" data-tooltip-show-delay="1000">
+                        龙王普拉顿桑克斯
+                    </span> •
+                    <span class="preset" data-tooltip="組態" data-tooltip-show-delay="1000">
+                        无规则
+                    </span> •
+                    <span class="tick-rate" data-tooltip="運算頻率" data-tooltip-show-delay="1000">
+                        ?
+                    </span>
+                </div>
+            </td>
+            <td class="players">
+                <span class="occupied">0</span> /
+                <span class="max">∞</span>
+            </td>
+            <td class="less-padding server-icons">
+                <i class="icon-servertype icon-servertype-2"></i>
+            </td>
+            <td class="ping no-separator">
+                -
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Add CSS styles for the table */
+        table {
+            width: 60%;
+            border-collapse: collapse;
+            margin: 0 auto;
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e0e0e0;
+        }
+
+        .map-thumb img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .server-name {
+            font-weight: bold;
+        }
+
+        .country-flag img {
+            max-width: 20px;
+            height: auto;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+
+        .mode, .map, .preset, .tick-rate {
+            margin-right: 10px;
+        }
+
+        .occupied {
+            color: rgb(18, 155, 214);
+        }
+
+        .max {
+            color: rgb(18, 155, 214);
+        }
+
+        .icon-servertype {
+            font-size: 24px;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr class="server-row trigger-el" data-guid="0c585f5a-06f6-4baf-b222-f81bdb479f95" data-game="2048" data-platform="1" data-role="1">
+            <td class="map less-padding no-separator">
+                <div class="map-thumb">
+                    <img src="https://github.com/Asuka-EVA-02/Knight-Platform/blob/main/%5BJ4BPBLUIRJ3DV%7BNF%7D~9FVY.png?raw=true" alt="荒野遊蹤">
+                </div>
+                <div class="loader small"></div>
+            </td>
+            <td class="server less-padding floating-width" style="">
+                <div class="server-name">
+                    老龙 Old Long
+                </div>
+                <div class="server-details">
+                    <div class="expansions pull-right"></div>
+                    <span class="country-flag">
+                    </span>
+                    <span class="mode" data-tooltip="模式" data-tooltip-show-delay="1000">
+                        无缝2.0
+                    </span> •
+                    <span class="map" data-tooltip="地圖" data-tooltip-show-delay="1000">
+                        龙王普拉顿桑克斯
+                    </span> •
+                    <span class="preset" data-tooltip="組態" data-tooltip-show-delay="1000">
+                        无规则
+                    </span> •
+                    <span class="tick-rate" data-tooltip="運算頻率" data-tooltip-show-delay="1000">
+                        ?
+                    </span>
+                </div>
+            </td>
+            <td class="players">
+                <span class="occupied">0</span> /
+                <span class="max">∞</span>
+            </td>
+            <td class="less-padding server-icons">
+                <i class="icon-servertype icon-servertype-2"></i>
+            </td>
+            <td class="ping no-separator">
+                -
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+
